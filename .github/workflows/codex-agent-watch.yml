@@ -21,6 +21,9 @@ on:
 
 jobs:
   watch:
+    # Upstream-only maintenance job. Forks have no issue tracker to write the
+    # drift tracker to and no Amelia secrets, so every run fails.
+    if: ${{ github.repository == 'letta-ai/letta-code' }}
     runs-on: ubuntu-24.04
     permissions:
       contents: write

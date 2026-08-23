@@ -14,6 +14,8 @@ on:
 jobs:
   telegram-live-smoke:
     name: Telegram Live Smoke
+    # Upstream-only smoke test. Forks have no TELEGRAM_SMOKE_* secrets.
+    if: ${{ github.repository == 'letta-ai/letta-code' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
